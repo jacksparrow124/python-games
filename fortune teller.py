@@ -1,5 +1,5 @@
 import random
-
+#comment
 fortune = []
 fortune.append ('you will die soon')
 fortune.append ('you will win the mega millions jackpot')
