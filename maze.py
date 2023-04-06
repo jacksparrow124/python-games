@@ -102,6 +102,7 @@ canvas.bind_all('<KeyPress-Down>', move_down)
 window.mainloop()
     
 
+#by jacksparrow124
 
 
 

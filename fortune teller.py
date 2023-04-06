@@ -1,6 +1,6 @@
 import random
-#comment
-#test
+
+
 fortune = []
 fortune.append ('you will die soon')
 fortune.append ('you will win the mega millions jackpot')
@@ -19,3 +19,5 @@ print ('oh.')
 print ('would you like me to read your fortune?')
 answer = input ('yes or no? ')
 print (random.choice(fortune))
+
+#by jacksparrow124
