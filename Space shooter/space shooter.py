@@ -18,30 +18,32 @@ img3 = PhotoImage(file = local_path+'images/missle_red.png')
 
 points = 0
 
-    def move_shots():
-        for shot in shots:
+def move_shots():
+    for shot in shots:
+        canvas.move(shot, 0, -5)
+        pos = canvas.coords(shot)
+        if pos[1] <= 0:
+            canvas.delete(shot)
+            shots.remove(shot)
 
 
 
+def play_shoot():
+    winsound.PlaySound(local_path+'sounds/shoot.wav', 1)
 
+def play_boom():
+    winsound.PlaySound(local_path+'sounds/explosion.wav', 1)
 
-
-    def play_shoot():
-     winsound.PlaySound(local_path+'sounds/shoot.wav', 1)
-    
-    def play_boom():
-     winsound.PlaySound(local_path+'sounds/explosion.wav', 1)
-    
-    def play_launch():
-     winsound.PlaySound(local_path+'sounds/launch.wav', 1)
+def play_launch():
+    winsound.PlaySound(local_path+'sounds/launch.wav', 1)
 
 shots = []
   
-    def shoot(evt):
-        pos = Canvas.coords(ship)
-        shot = Canvas.create_rectangle(pos[0]+35, 530, pos[0]+40, 540, fill='green')
-        shots.append(shot)
-        play_shoot()
+def shoot(evt):
+    pos = Canvas.coords(ship)
+    shot = Canvas.create_rectangle(pos[0]+35, 530, pos[0]+40, 540, fill='green')
+    shots.append(shot)
+    play_shoot()
 
 
 
@@ -49,6 +51,8 @@ shots = []
 def new_game():
      active = True 
      global points
+     global canvas
+     global ship
      points = 0 
      play_launch()
      canvas = Canvas(window, width = 800, height = 650)
@@ -60,24 +64,25 @@ def new_game():
      score.config(font = ('Courier', 24))
      score.pack()
     
-    def move_left(evt):
-        pos = canvas.coords(ship)
-        if pos[0] > 0:
-            canvas.move(ship, -15, 0)
+def move_left(evt):
+    pos = canvas.coords(ship)
+    if pos[0] > 0:
+        canvas.move(ship, -15, 0)
 
-    def move_right(evt):
-        pos = canvas.coords(ship)
-        if pos[0] < 730:
-            canvas.move(ship, 15, 0)
+def move_right(evt):
+    pos = canvas.coords(ship)
+    if pos[0] < 730:
+        canvas.move(ship, 15, 0)
 
     canvas.bind_all('<KeyPress-Right>', move_right)
     canvas.bind_all('<KeyPress-Left>', move_left)
     canvas.bind_all('KeyPress-Up', shoot)
 
-
-    while active:
-        window.update()
-        time.sleep(.015)
+active = True
+while active:
+    move_shots()
+    window.update()
+    time.sleep(.015)
 
 
 
