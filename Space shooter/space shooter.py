@@ -16,13 +16,13 @@ img3 = PhotoImage(file = 'images/missle_red.png')
 points = 0
 
 def play_shoot():
-    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/shoot.wav', 1)
+    winsound.PlaySound('C:/Users/ajone/Desktop/python/beginner-python-games/sounds/shoot.wav', 1)
     
 def play_boom():
-    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/explosion.wav', 1)
+    winsound.PlaySound('C:/Users/ajone/Desktop/python/beginner-python-games/sounds/explosion.wav', 1)
     
 def play_launch():
-    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/launch.wav', 1)
+    winsound.PlaySound('C:/Users/ajone/Desktop/python/beginner-python-games/sounds/launch.wav', 1)
     
 def new_game():
     active = True 
