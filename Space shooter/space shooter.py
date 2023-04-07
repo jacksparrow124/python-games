@@ -16,13 +16,13 @@ img3 = PhotoImage(file = 'images/missle_red.png')
 points = 0
 
 def play_shoot():
-    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/shoot', 1)
+    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/shoot.wav', 1)
     
 def play_boom():
-    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/explosion', 1)
+    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/explosion.wav', 1)
     
 def play_launch():
-    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/launch', 1)
+    winsound.PlaySound('C:/Users/ajone/Desktop/PYTHONCLASS/beginner-python-games/sounds/launch.wav', 1)
     
 def new_game():
     active = True 
@@ -36,10 +36,13 @@ def new_game():
     missile2 = canvas.create_image(500, 100, anchor = NW, image = img3)
     score = Label(window, text = 'Score = 0')
     score.config(font = ('Courier', 24))
+    score.pack()
     
+    while active:
+        window.update()
+        time.sleep(.015)
 
-
-window.mainloop()
+new_game()
 
 
 
