@@ -1,5 +1,5 @@
 # trivia game
-
+import time 
 
 
 
@@ -29,6 +29,10 @@ if answer == '768':
 else:
     print ('incorrect')
 print ('congrats! you finished!')
+print ('drumroll please...')
+time.sleep(2)
+print ('YOUR PRIZE IS: A BRAND NEW TRIP TO DISNEY LAND!!!!!')
+
 
 
 # by jacksparrow124
