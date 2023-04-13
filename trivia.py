@@ -12,7 +12,7 @@ else:
     print ('incorrect. ')
 print ('who found america?')
 answer1 = input ()
-if answer1 == 'native americans':
+if answer1 == 'native americans' or 'indiginous people':
     print ('correct')
 else:
     print ('incorrect')
