@@ -7,7 +7,7 @@ canvas = Canvas(window, width = 600, height = 600)
 canvas.pack()
 
 
-
+#defining the restart function
 def you_won():
     PlayAgain =  tkinter.messagebox.askyesno('YOU WON!!! Do you want to play again?')
     if PlayAgain:
@@ -16,12 +16,13 @@ def you_won():
         window.destroy()
         raise SystemExit 
         
-        
+#position of the player upon start  
 def new_game():
     canvas.coords(player, 37, 5, 52, 20)
     
 walls = []
 
+#row layout
 def draw_row(row, squares):
     squares = list(squares)
     column = 0
@@ -64,7 +65,7 @@ def touching_walls(pos):
                 return True 
     return False 
 
-
+#moving the character
 def move_left(evt):
     pos = canvas.coords(player) 
     pos[0] -= 5
@@ -91,7 +92,7 @@ def move_down(evt):
     if pos[3] > 615:
         you_won() 
 
-
+#bind_all functions for the move events
 canvas.bind_all('<KeyPress-Left>', move_left)
 canvas.bind_all('<KeyPress-Right>', move_right)
 canvas.bind_all('<KeyPress-Up>', move_up)
