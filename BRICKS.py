@@ -13,13 +13,14 @@ def new_game():
     puck = canvas.create_rectangle(170, 170, 180, 180, fill = 'green')
     paddle = canvas.create_rectangle(260, 470, 340, 480, fill = 'orange')
 
+#defining the position and event for the puck hitting the paddle
     def hit_paddle(pos):
         paddle_pos = canvas.coords(paddle)
         if pos[2] >= paddle_pos[0] and pos[0] <= paddle_pos[2]:
             if pos[3] >= paddle_pos[1] and pos[3] <= paddle_pos[3]:
                 return True
         return False 
-
+#defining the position and event for the puck hitting one of the bricks
     def hit_brick(pos):
             for brick in bricks:
                 brick_pos = canvas.coords(brick)
@@ -66,6 +67,8 @@ def new_game():
             window.destroy()
             raise SystemExit
 
+
+#making 3 rows of bricks
     for i in range(16):
         brick_top = 50
         brick_left = 60+30*i
