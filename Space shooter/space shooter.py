@@ -95,7 +95,7 @@ def new_game():
 
 
 
-
+#moving the shots based on where the ship is; and deleting the shots based on where the enemy is
     def move_shots():
         for shot in shots:
             canvas.move(shot, 0, -5)
