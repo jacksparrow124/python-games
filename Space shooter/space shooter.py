@@ -10,7 +10,7 @@ window.title('space shooter')
 local_path="c:/Users/ajone/Desktop/python/beginner-python-games/Space shooter/"
 
 
-#images and sounds; put your local file path here
+#images and sounds; put your local file path here 
 img1 = PhotoImage(file = local_path+'images/ship.png')
 img2 = PhotoImage(file = local_path+'images/missle_purple.png')
 img3 = PhotoImage(file = local_path+'images/missle_red.png')
